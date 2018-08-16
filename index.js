@@ -9,6 +9,13 @@ function reverse(str) {
   return reversed;
 }
 
+//return true if the string is a palindrome and false if the string is not a palindrome. Do include spaces and punctuation.
+function palindrome(str) {
+  let reversed = str.split('').reverse().join('')
+
+  return str === reversed;
+}
+
 
 //Capitalize the first letter of each word in a string.
 function capitalize(str) {
