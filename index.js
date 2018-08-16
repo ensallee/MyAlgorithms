@@ -1,3 +1,15 @@
+//reverse a string without using the .reverse method on an array:
+function reverse(str) {
+  let reversed = '';
+
+  for (let char of str) {
+    reversed = char + reversed
+  }
+
+  return reversed;
+}
+
+
 //Capitalize the first letter of each word in a string.
 function capitalize(str) {
   return str.split(" ").map(word => {
