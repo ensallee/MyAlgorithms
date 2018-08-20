@@ -73,6 +73,40 @@ function fizzBuzz(n) {
     }
   }
 }
+// Check to see if two provided strings are anagrams of eachother.
+// One string is an anagram of another if it uses the same characters
+// in the same quantity. Only consider characters, not spaces
+// or punctuation.  Consider capital letters to be the same as lower case
+function anagrams(string1, string2) {
+  let map1 = generateMap(string1)
+  let map2 = generateMap(string2)
+
+  if (Object.keys(map1).length !== Object.keys(map2).length) {
+    return false
+  } else {
+    for (let key in map1) {
+      if (map1[key] !== map2[key]) {
+        return false
+      }
+    }
+    return true
+  }
+}
+
+//this is a helper method for anagrams
+function generateMap(str) {
+  let strippedString = str.replace(/[^\w]/g, "").toLowerCase()
+  let charMap = {}
+
+  for (let char of strippedString) {
+    if (charMap[char]) {
+      charMap[char]++
+    } else {
+      charMap[char] = 1
+    }
+  }
+  return charMap
+}
 
 //Capitalize the first letter of each word in a string.
 function capitalize(str) {
