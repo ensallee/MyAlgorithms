@@ -16,6 +16,19 @@ function palindrome(str) {
   return str === reversed;
 }
 
+//reverse an integer, preserving the sign (positive or negative) and getting rid of any leading 0s
+//Examples: // --- Examples
+//   reverseInt(15) === 51
+//   reverseInt(981) === 189
+//   reverseInt(500) === 5
+//   reverseInt(-15) === -51
+//   reverseInt(-90) === -9
+function reverseInt(n) {
+  let reversed = n.toString().split('').reverse().join('')
+  return parseInt(reversed) * Math.sign(n)
+}
+
+
 
 //Capitalize the first letter of each word in a string.
 function capitalize(str) {
