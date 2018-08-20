@@ -167,3 +167,16 @@ function pyramid(n) {
     console.log(level)
   }
 }
+
+// Write a function that returns the number of vowels used in a string.
+function vowels(str) {
+  let counter = 0
+  const checker = ["a", "e", "i", "o", "u"]
+
+  for (let char of str.toLowerCase()) {
+    if (checker.includes(char)) {
+      counter++;
+    }
+  }
+  return counter;
+}
