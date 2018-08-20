@@ -28,7 +28,32 @@ function reverseInt(n) {
   return parseInt(reversed) * Math.sign(n)
 }
 
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
+function maxChar(str) {
+  let map = {}
+  let maxVal = 0
+  let maxChar = ''
 
+  for (let char of str) {
+    if (map[char]) {
+      map[char]++
+    } else {
+      map[char] = 1
+    }
+  }
+
+  for (let key in map) {
+    if (map[key] > maxVal) {
+      maxVal = map[key]
+      maxChar = key
+    }
+  }
+  return maxChar;
+}
 
 //Capitalize the first letter of each word in a string.
 function capitalize(str) {
@@ -58,7 +83,6 @@ function steps(n) {
     console.log(stair);
   }
 }
-
 
 //Form a visual pyramic of height n by console.logging out levels with #. There should be spaces on the right and left of each #.
 //// --- Examples
